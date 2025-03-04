@@ -1,0 +1,9 @@
+{
+  "name": "abx-exchange-server",
+  "version": "1.0.0",
+  "description": "Mock exchange server for ABX client testing",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  }
+} 
