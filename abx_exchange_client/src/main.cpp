@@ -4,7 +4,7 @@
 int main() {
     try {
         Client clientObj;
-        clientObj.run();
+        clientObj.execute();
         std::cout << "Data collection complete. Check output.json for results." << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Fatal error: " << e.what() << std::endl;
