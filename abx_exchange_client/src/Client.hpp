@@ -27,26 +27,26 @@ class Client {
 public:
     Client();
     ~Client();
-    void run();
+    void execute();
 
 private:
-    void initializeWinsock();
-    void connectToServer();
-    void requestAllPackets();
-    void receivePackets();
-    void findMissingSequences();
-    void requestMissingPackets();
-    void writeToJson();
-
-    std::vector<Packet> packets;
-    std::vector<int> missingSequences;
+    void setupNetwork();
+    void establishConnection();
+    void requestAllData();
+    void receiveData();
+    void identifyMissingSequences();
+    void requestMissingData();
+    void exportToJson(); 
+    
+    std::vector<Packet> packetList;
+    std::vector<int> missingSequenceList;
 
     #ifdef _WIN32
         SOCKET sock = INVALID_SOCKET;
         WSADATA wsaData;
         struct sockaddr_in serv_addr;
     #else
-        int sock = -1;
-        struct sockaddr_in serv_addr;
+        int networkSocket = -1;  // Previously undeclared
+        struct sockaddr_in serverAddress; // Previously undeclared
     #endif
 };
