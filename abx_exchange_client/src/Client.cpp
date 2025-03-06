@@ -15,6 +15,7 @@ Client::Client() {
     setupNetwork();
 }
 
+
 Client::~Client() {
     if (networkSocket != -1) {
         #ifdef _WIN32
